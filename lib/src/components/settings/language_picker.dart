@@ -4,6 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../generated/l10n.dart';
 import '../../blocks/settings/settings_cubit.dart';
 
+const Map<String, String> languageMap = {
+  'en': 'English',
+  'uk': 'Українська',
+};
+
 class LanguagePicker extends StatelessWidget {
   const LanguagePicker({super.key});
 
@@ -16,7 +21,7 @@ class LanguagePicker extends StatelessWidget {
           .map(
             (locale) => DropdownMenuItem(
               value: locale,
-              child: Text(locale.languageCode),
+              child: Text(languageMap[locale.languageCode] ?? ''),
             ),
           )
           .toList(),
