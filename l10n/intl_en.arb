@@ -1,4 +1,10 @@
 {
   "@@locale": "en",
-  "homeHeader": "Header"
+  "buttonNext": "Next",
+  "tabAbout": "About",
+  "tabExperience": "Experience",
+  "tabProjects": "Projects",
+  "tabSettings": "Settings",
+  "welcomeDescription": "This portfolio mobile application is crafted by Vadym Barda using Flutter. Thank you for exploring it.",
+  "welcomeHeader": "Welcome"
 }

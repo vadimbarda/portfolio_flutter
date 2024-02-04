@@ -16,6 +16,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final decorOffset = MediaQuery.of(context).size.width;
     return BlocFactory<AppLoaderCubit, AppLoaderState>(
       create: (context) => AppLoaderCubit(),
       builder: (context, appState) => switch (appState) {
@@ -39,8 +40,8 @@ class App extends StatelessWidget {
               themeMode: settings.mode,
               debugShowCheckedModeBanner: false,
               home: settings.onboarded
-                  ? const LandingScreen()
-                  : const WelcomeScreen(),
+                  ? LandingScreen(decorOffset: decorOffset)
+                  : WelcomeScreen(decorOffset: decorOffset),
             ),
           ),
       },

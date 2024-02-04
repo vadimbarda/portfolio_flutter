@@ -1,4 +1,10 @@
 {
   "@@locale": "uk",
-  "homeHeader": "Головна"
+  "buttonNext": "Далі",
+  "tabAbout": "Про мене",
+  "tabExperience": "Досвід",
+  "tabProjects": "Проекти",
+  "tabSettings": "Налаштування",
+  "welcomeDescription": "Цей мобільний додаток було створено Вадимом Бардою на Flutter у якості портфоліо. Дякую за ваш інтерес.",
+  "welcomeHeader": "Вітаю"
 }

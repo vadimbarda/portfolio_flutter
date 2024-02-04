@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../generated/fonts.gen.dart';
 
-final TextTheme baseTextTheme = TextTheme(
+final TextTheme textTheme = TextTheme(
   displayLarge: TextStyle(
     fontFamily: FontFamily.poppins,
     fontWeight: FontWeight.normal,

@@ -4,7 +4,9 @@ import 'package:collection/collection.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-const defaultLanguage = 'en';
+import '../../../generated/l10n.dart';
+
+final defaultLanguage = Strings.delegate.supportedLocales.first.languageCode;
 const defaultMode = ThemeMode.light;
 
 class SettingsState extends Equatable {
