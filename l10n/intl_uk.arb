@@ -1,7 +1,7 @@
 {
   "@@locale": "uk",
   "buttonNext": "Далі",
-  "buttonShowWelcomeScreen": "Показати вітальний екран",
+  "buttonShowWelcomeScreen": "Показати стартовий екран",
   "settingsLanguage": "Мова",
   "settingsThemeMode": "Кольорова тема",
   "tabAbout": "Про мене",

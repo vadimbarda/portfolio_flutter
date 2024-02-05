@@ -19,7 +19,7 @@ class TabHeader extends StatelessWidget {
       ),
       child: Text(
         title,
-        style: context.textTheme.displaySmall,
+        style: context.textTheme.headlineMedium,
       ),
     );
   }
