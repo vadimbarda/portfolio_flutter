@@ -1,6 +1,9 @@
 {
   "@@locale": "uk",
   "buttonNext": "Далі",
+  "buttonShowWelcomeScreen": "Показати вітальний екран",
+  "settingsLanguage": "Мова",
+  "settingsThemeMode": "Кольорова тема",
   "tabAbout": "Про мене",
   "tabExperience": "Досвід",
   "tabProjects": "Проекти",

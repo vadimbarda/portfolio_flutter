@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import '../config/theme.dart';
+import '../config/app_theme.dart';
 import '../generated/l10n.dart';
 import 'blocks/app_loader.dart/app_loader_cubit.dart';
 import 'blocks/app_loader.dart/app_loader_state.dart';
@@ -35,8 +35,7 @@ class App extends StatelessWidget {
               ],
               supportedLocales: Strings.delegate.supportedLocales,
               locale: settings.locale,
-              theme: lightTheme,
-              darkTheme: darkTheme,
+              theme: AppTheme(settings.mode).theme,
               themeMode: settings.mode,
               debugShowCheckedModeBanner: false,
               home: settings.onboarded

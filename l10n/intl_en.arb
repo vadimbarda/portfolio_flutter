@@ -1,6 +1,9 @@
 {
   "@@locale": "en",
   "buttonNext": "Next",
+  "buttonShowWelcomeScreen": "Show welcome screen",
+  "settingsLanguage": "Language",
+  "settingsThemeMode": "Theme mode",
   "tabAbout": "About",
   "tabExperience": "Experience",
   "tabProjects": "Projects",

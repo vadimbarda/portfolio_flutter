@@ -1,11 +1,12 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../config/consts.dart';
 import '../../generated/assets.gen.dart';
+import '../blocks/settings/settings_cubit.dart';
 import '../components/settings/language_picker.dart';
 import '../extensions/context.dart';
-import 'landing_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key, required this.decorOffset});
@@ -46,7 +47,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Stack(
-        clipBehavior: Clip.none,
         children: [
           AnimatedBuilder(
             animation: Listenable.merge(
@@ -98,13 +98,13 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     padding: const EdgeInsets.only(bottom: paddingLarge),
                     child: Text(
                       context.strings.welcomeHeader,
-                      style: Theme.of(context).textTheme.displayMedium,
+                      style: context.textTheme.displayMedium,
                       textAlign: TextAlign.center,
                     ),
                   ),
                   Text(
                     context.strings.welcomeDescription,
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    style: context.textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                   ),
                   Spacer(),
@@ -112,7 +112,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Flexible(
-                        fit: FlexFit.tight,
+                        fit: FlexFit.loose,
                         child: FilledButton(
                           onPressed: () => sizeController.forward(),
                           child: Text(context.strings.buttonNext.toUpperCase()),
@@ -160,9 +160,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             (status) {
               if (status == AnimationStatus.completed) {
                 sizeController.reverse();
-                AudioCache.instance = AudioCache(prefix: '');
-                final player = AudioPlayer();
-                player.play(AssetSource(Assets.audio.intro));
+                playIntroSound();
               }
             },
           );
@@ -187,19 +185,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     shiftController.addStatusListener(
       (status) {
         if (status == AnimationStatus.completed) {
-          navigateToLandingScreen();
+          setUserOnboarded();
         }
       },
     );
   }
 
-  void navigateToLandingScreen() {
-    Navigator.of(context).pushReplacement(
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            LandingScreen(decorOffset: widget.decorOffset),
-        transitionDuration: Duration.zero,
-      ),
-    );
+  void setUserOnboarded() {
+    context.read<SettingsCubit>().setOnboarded(true);
+  }
+
+  Future<void> playIntroSound() async {
+    AudioCache.instance = AudioCache(prefix: '');
+    final player = AudioPlayer();
+    await player.play(AssetSource(Assets.audio.intro));
   }
 }
