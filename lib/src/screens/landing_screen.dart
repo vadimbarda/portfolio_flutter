@@ -43,9 +43,7 @@ class LandingScreen extends StatelessWidget {
               child: SafeArea(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: pagePadding),
-                  child: SingleChildScrollView(
-                    child: currentTab.screen,
-                  ),
+                  child: buildAnimatedTransition(context, currentTab),
                 ),
               ),
             )
@@ -55,9 +53,36 @@ class LandingScreen extends StatelessWidget {
           selectedIndex: navTabs.indexOf(currentTab),
           destinations:
               navTabs.map((tab) => tab.getDestination(context)).toList(),
+          indicatorShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+          ),
           onDestinationSelected: (index) => context
               .read<NavigationCubit>()
               .setActiveTab(navTabs.elementAtOrNull(index)),
+        ),
+      ),
+    );
+  }
+
+  Widget buildAnimatedTransition(BuildContext context, NavigationTab tab) {
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 200),
+      transitionBuilder: (Widget child, Animation<double> animation) =>
+          FadeTransition(
+        opacity: animation,
+        child: SlideTransition(
+          position: Tween<Offset>(
+            begin: Offset(0.0, 0.1),
+            end: Offset.zero,
+          ).animate(animation),
+          child: child,
+        ),
+      ),
+      child: Align(
+        key: ValueKey<NavigationTab>(tab),
+        alignment: Alignment.topCenter,
+        child: SingleChildScrollView(
+          child: tab.getScreen(context),
         ),
       ),
     );

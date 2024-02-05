@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'consts.dart';
 import 'typography.dart';
 
 final class AppTheme {
@@ -19,7 +20,7 @@ final class AppTheme {
       ),
       shape: MaterialStateProperty.all<OutlinedBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
         ),
       ),
     );
@@ -40,6 +41,9 @@ final class AppTheme {
         style: buttonStyle,
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
+        style: buttonStyle,
+      ),
+      textButtonTheme: TextButtonThemeData(
         style: buttonStyle,
       ),
     );

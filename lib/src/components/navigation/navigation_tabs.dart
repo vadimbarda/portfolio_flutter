@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../extensions/context.dart';
+import '../../storages/user_storage.dart';
 import '../about/about_tab.dart';
 import '../experience/experience_tab.dart';
 import '../projects/projects_tab.dart';
@@ -12,9 +13,11 @@ enum NavigationTab {
   projects,
   settings;
 
-  Widget get screen {
+  Widget getScreen(BuildContext context) {
     return switch (this) {
-      NavigationTab.about => AboutTab(),
+      NavigationTab.about => AboutTab(
+          user: UserStorage(context).data,
+        ),
       NavigationTab.experience => ExperienceTab(),
       NavigationTab.projects => ProjectsTab(),
       NavigationTab.settings => SettingsTab()
