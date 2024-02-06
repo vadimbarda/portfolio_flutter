@@ -44,7 +44,20 @@ final class AppTheme {
         style: buttonStyle,
       ),
       textButtonTheme: TextButtonThemeData(
-        style: buttonStyle,
+        style: ButtonStyle(
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          minimumSize: MaterialStateProperty.all<Size>(
+            Size(10, 25),
+          ),
+          padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+            EdgeInsets.symmetric(horizontal: 5, vertical: 7),
+          ),
+          shape: MaterialStateProperty.all<OutlinedBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+            ),
+          ),
+        ),
       ),
     );
   }

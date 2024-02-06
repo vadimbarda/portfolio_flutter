@@ -17,9 +17,14 @@ class TabHeader extends StatelessWidget {
         bottom: paddingLarge,
         top: Platform.isAndroid ? paddingLarge : 0,
       ),
-      child: Text(
-        title,
-        style: context.textTheme.headlineMedium,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            style: context.textTheme.headlineMedium,
+          ),
+        ],
       ),
     );
   }

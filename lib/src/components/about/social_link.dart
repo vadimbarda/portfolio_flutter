@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../config/consts.dart';
 import '../../models/social_link.dart';
 
 class SocialLink extends StatelessWidget {
@@ -13,10 +14,13 @@ class SocialLink extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 25,
-          width: 25,
-          child: item.icon,
+        Padding(
+          padding: const EdgeInsets.only(right: paddingSmall),
+          child: SizedBox(
+            height: 25,
+            width: 25,
+            child: item.icon,
+          ),
         ),
         TextButton(
           onPressed: () => openLink(item.address),
