@@ -13,6 +13,24 @@ enum NavigationTab {
   projects,
   settings;
 
+  Icon get icon {
+    return switch (this) {
+      NavigationTab.about => Icon(Icons.person),
+      NavigationTab.experience => Icon(Icons.business),
+      NavigationTab.projects => Icon(Icons.work),
+      NavigationTab.settings => Icon(Icons.settings)
+    };
+  }
+
+  String getLabel(BuildContext context) {
+    return switch (this) {
+      NavigationTab.about => context.strings.tabAbout,
+      NavigationTab.experience => context.strings.tabExperience,
+      NavigationTab.projects => context.strings.tabProjects,
+      NavigationTab.settings => context.strings.tabSettings
+    };
+  }
+
   Widget getScreen(BuildContext context) {
     return switch (this) {
       NavigationTab.about => AboutTab(
@@ -21,27 +39,6 @@ enum NavigationTab {
       NavigationTab.experience => ExperienceTab(),
       NavigationTab.projects => ProjectsTab(),
       NavigationTab.settings => SettingsTab()
-    };
-  }
-
-  NavigationDestination getDestination(BuildContext context) {
-    return switch (this) {
-      NavigationTab.about => NavigationDestination(
-          icon: Icon(Icons.person),
-          label: context.strings.tabAbout,
-        ),
-      NavigationTab.experience => NavigationDestination(
-          icon: Icon(Icons.business),
-          label: context.strings.tabExperience,
-        ),
-      NavigationTab.projects => NavigationDestination(
-          icon: Icon(Icons.work),
-          label: context.strings.tabProjects,
-        ),
-      NavigationTab.settings => NavigationDestination(
-          icon: Icon(Icons.settings),
-          label: context.strings.tabSettings,
-        )
     };
   }
 }

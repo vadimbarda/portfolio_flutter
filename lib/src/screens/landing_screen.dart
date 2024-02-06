@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../config/consts.dart';
 import '../../generated/assets.gen.dart';
 import '../blocks/bloc_factory/bloc_factory.dart';
 import '../blocks/navigation/navigation_cubit.dart';
+import '../components/navigation/bottom_navigation.dart';
 import '../components/navigation/navigation_tabs.dart';
 
 const navTabs = [
@@ -49,16 +49,9 @@ class LandingScreen extends StatelessWidget {
             )
           ],
         ),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: navTabs.indexOf(currentTab),
-          destinations:
-              navTabs.map((tab) => tab.getDestination(context)).toList(),
-          indicatorShape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
-          ),
-          onDestinationSelected: (index) => context
-              .read<NavigationCubit>()
-              .setActiveTab(navTabs.elementAtOrNull(index)),
+        bottomNavigationBar: BottomNavigation(
+          tabs: navTabs,
+          currentIndex: navTabs.indexOf(currentTab),
         ),
       ),
     );
