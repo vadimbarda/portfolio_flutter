@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../config/consts.dart';
 import '../../extensions/context.dart';
-import '../../models/user.dart';
+import '../../models/user_model.dart';
 import '../headers/tab_header.dart';
 import 'avatar_banner.dart';
 import 'list_section.dart';
@@ -14,7 +14,7 @@ class AboutTab extends StatelessWidget {
     required this.user,
   });
 
-  final User user;
+  final UserModel user;
 
   @override
   Widget build(BuildContext context) {

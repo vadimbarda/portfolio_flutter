@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../config/consts.dart';
-import '../../models/social_link.dart';
+import '../../models/social_link_model.dart';
 
 class SocialLink extends StatelessWidget {
   const SocialLink({super.key, required this.item});
 
-  final SocialItem item;
+  final SocialLinkModel item;
 
   @override
   Widget build(BuildContext context) {

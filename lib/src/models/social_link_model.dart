@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SocialItem {
-  const SocialItem({
+class SocialLinkModel {
+  const SocialLinkModel({
     required this.title,
     required this.address,
     required this.icon,

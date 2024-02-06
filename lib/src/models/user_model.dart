@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'social_link.dart';
+import 'social_link_model.dart';
 
-class User {
-  const User({
+class UserModel {
+  const UserModel({
     required this.name,
     required this.title,
     required this.profile,
@@ -18,7 +18,7 @@ class User {
   final String title;
   final String profile;
   final ImageProvider avatar;
-  final List<SocialItem> socialLinks;
+  final List<SocialLinkModel> socialLinks;
   final List<String> skills;
   final List<String> interests;
   final List<String> hobbies;

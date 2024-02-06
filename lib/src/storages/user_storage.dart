@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../../generated/assets.gen.dart';
 import '../extensions/context.dart';
-import '../models/social_link.dart';
-import '../models/user.dart';
+import '../models/social_link_model.dart';
+import '../models/user_model.dart';
 
 class UserStorage {
   const UserStorage(this.context);
 
   final BuildContext context;
 
-  User get data {
-    return User(
+  UserModel get data {
+    return UserModel(
       name: context.strings.userName,
       title: context.strings.userTitle,
       avatar: Assets.images.avatar.provider(),
@@ -38,22 +38,22 @@ class UserStorage {
         context.strings.userHobbiesSport,
       ],
       socialLinks: [
-        SocialItem(
+        SocialLinkModel(
           title: 'v.barda@online.ua',
           address: 'mailto:v.barda@online.ua',
           icon: Assets.logos.email.image(),
         ),
-        SocialItem(
+        SocialLinkModel(
           title: 'LinkedIn',
           address: 'https://www.linkedin.com/in/vadym-barda-26731b5/',
           icon: Assets.logos.linkedin.image(),
         ),
-        SocialItem(
+        SocialLinkModel(
           title: 'GitHub',
           address: 'https://github.com/vadimbarda',
           icon: Assets.logos.github.image(),
         ),
-        SocialItem(
+        SocialLinkModel(
           title: 'CV',
           address:
               'https://drive.google.com/file/d/17V5JUdNRwMRZzDcYA_7DlVr4Zl-JS8XN/view?usp=sharing',
