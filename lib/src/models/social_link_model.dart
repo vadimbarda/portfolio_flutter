@@ -8,6 +8,6 @@ class SocialLinkModel {
   });
 
   final String title;
-  final String address;
+  final Uri address;
   final Image icon;
 }

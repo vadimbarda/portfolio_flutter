@@ -30,10 +30,9 @@ class SocialLink extends StatelessWidget {
     );
   }
 
-  void openLink(String address) {
+  void openLink(Uri address) {
     try {
-      final uri = Uri.parse(item.address);
-      launchUrl(uri);
+      launchUrl(address);
     } catch (error) {
       print(error);
     }

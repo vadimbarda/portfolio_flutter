@@ -47,10 +47,10 @@ final class AppTheme {
         style: ButtonStyle(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           minimumSize: MaterialStateProperty.all<Size>(
-            Size(10, 25),
+            Size(10, 20),
           ),
           padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-            EdgeInsets.symmetric(horizontal: 5, vertical: 7),
+            EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           ),
           shape: MaterialStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(

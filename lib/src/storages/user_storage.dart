@@ -40,23 +40,24 @@ class UserStorage {
       socialLinks: [
         SocialLinkModel(
           title: 'v.barda@online.ua',
-          address: 'mailto:v.barda@online.ua',
+          address: Uri.parse('mailto:v.barda@online.ua'),
           icon: Assets.logos.email.image(),
         ),
         SocialLinkModel(
           title: 'LinkedIn',
-          address: 'https://www.linkedin.com/in/vadym-barda-26731b5/',
+          address:
+              Uri.parse('https://www.linkedin.com/in/vadym-barda-26731b5/'),
           icon: Assets.logos.linkedin.image(),
         ),
         SocialLinkModel(
           title: 'GitHub',
-          address: 'https://github.com/vadimbarda',
+          address: Uri.parse('https://github.com/vadimbarda'),
           icon: Assets.logos.github.image(),
         ),
         SocialLinkModel(
           title: 'CV',
-          address:
-              'https://drive.google.com/file/d/17V5JUdNRwMRZzDcYA_7DlVr4Zl-JS8XN/view?usp=sharing',
+          address: Uri.parse(
+              'https://drive.google.com/file/d/17V5JUdNRwMRZzDcYA_7DlVr4Zl-JS8XN/view?usp=sharing'),
           icon: Assets.logos.cv.image(),
         ),
       ],

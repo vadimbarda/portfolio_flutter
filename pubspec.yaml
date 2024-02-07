@@ -16,6 +16,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_native_splash: ^2.3.10
+  intl: ^0.18.1
   shared_preferences: ^2.2.2
   url_launcher: ^6.2.4
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../config/consts.dart';
 import '../../generated/assets.gen.dart';
 import '../blocks/bloc_factory/bloc_factory.dart';
 import '../blocks/navigation/navigation_cubit.dart';
@@ -41,10 +40,7 @@ class LandingScreen extends StatelessWidget {
             ),
             Positioned.fill(
               child: SafeArea(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: pagePadding),
-                  child: buildAnimatedTransition(context, currentTab),
-                ),
+                child: buildAnimatedTransition(context, currentTab),
               ),
             )
           ],
@@ -74,9 +70,7 @@ class LandingScreen extends StatelessWidget {
       child: Align(
         key: ValueKey<NavigationTab>(tab),
         alignment: Alignment.topCenter,
-        child: SingleChildScrollView(
-          child: tab.getScreen(context),
-        ),
+        child: tab.getScreen(context),
       ),
     );
   }

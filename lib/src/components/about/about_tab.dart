@@ -18,42 +18,52 @@ class AboutTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        TabHeader(title: context.strings.tabAbout),
-        AvatarBanner(
-          avatar: user.avatar,
-          name: user.name,
-        ),
-        for (var item in user.socialLinks) SocialLink(item: item),
-        Padding(
-          padding:
-              const EdgeInsets.only(bottom: paddingMiddle, top: paddingLarge),
-          child: Text(user.profile),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: paddingLarge),
-          child: ListSection(
-            title: context.strings.userSkills,
-            list: user.skills,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TabHeader(title: context.strings.tabAbout),
+          AvatarBanner(
+            avatar: user.avatar,
+            name: user.name,
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: paddingLarge),
-          child: ListSection(
-            title: context.strings.userInterests,
-            list: user.interests,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: pagePadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (var item in user.socialLinks) SocialLink(item: item),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: paddingMiddle, top: paddingLarge),
+                  child: Text(user.profile),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: paddingLarge),
+                  child: ListSection(
+                    title: context.strings.userSkills,
+                    list: user.skills,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: paddingLarge),
+                  child: ListSection(
+                    title: context.strings.userInterests,
+                    list: user.interests,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: paddingLarge),
+                  child: ListSection(
+                    title: context.strings.userHobbies,
+                    list: user.hobbies,
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: paddingLarge),
-          child: ListSection(
-            title: context.strings.userHobbies,
-            list: user.hobbies,
-          ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

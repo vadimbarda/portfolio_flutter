@@ -18,40 +18,40 @@ class AvatarBanner extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 120,
+          padding: EdgeInsets.symmetric(horizontal: pagePadding),
+          height: 150,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: Assets.images.profileBanner.provider(),
-              fit: BoxFit.cover,
-              alignment: Alignment.topLeft,
-            ),
-            borderRadius: BorderRadius.circular(borderRadius),
+                image: Assets.images.profileBanner.provider(),
+                fit: BoxFit.cover,
+                alignment: Alignment.topLeft,
+                opacity: 0.8),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: avatar,
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.circular(borderRadius),
+              Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: avatar,
+                    fit: BoxFit.cover,
                   ),
+                  borderRadius: BorderRadius.circular(borderRadius),
                 ),
               ),
             ],
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(name),
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: pagePadding),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(name),
+            ],
+          ),
         ),
       ],
     );

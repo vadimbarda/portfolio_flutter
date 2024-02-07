@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../extensions/context.dart';
+import '../../storages/experience_storage.dart';
 import '../../storages/user_storage.dart';
 import '../about/about_tab.dart';
 import '../experience/experience_tab.dart';
@@ -36,7 +37,9 @@ enum NavigationTab {
       NavigationTab.about => AboutTab(
           user: UserStorage(context).data,
         ),
-      NavigationTab.experience => ExperienceTab(),
+      NavigationTab.experience => ExperienceTab(
+          experience: ExperienceStorage(context).data,
+        ),
       NavigationTab.projects => ProjectsTab(),
       NavigationTab.settings => SettingsTab()
     };

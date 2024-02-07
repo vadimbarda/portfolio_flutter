@@ -13,40 +13,43 @@ class SettingsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TabHeader(title: context.strings.tabSettings),
-        Padding(
-          padding: const EdgeInsets.only(bottom: paddingSmall),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                context.strings.settingsLanguage,
-                style: context.textTheme.bodyLarge,
-              ),
-              LanguagePicker()
-            ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: pagePadding),
+      child: Column(
+        children: [
+          TabHeader(title: context.strings.tabSettings),
+          Padding(
+            padding: const EdgeInsets.only(bottom: paddingSmall),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  context.strings.settingsLanguage,
+                  style: context.textTheme.bodyLarge,
+                ),
+                LanguagePicker()
+              ],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: paddingSmall),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                context.strings.settingsThemeMode,
-                style: context.textTheme.bodyLarge,
-              ),
-              ThemeSwitcher()
-            ],
+          Padding(
+            padding: const EdgeInsets.only(bottom: paddingSmall),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  context.strings.settingsThemeMode,
+                  style: context.textTheme.bodyLarge,
+                ),
+                ThemeSwitcher()
+              ],
+            ),
           ),
-        ),
-        FilledButton(
-          child: Text(context.strings.buttonShowWelcomeScreen.toUpperCase()),
-          onPressed: () => context.read<SettingsCubit>().setOnboarded(false),
-        ),
-      ],
+          FilledButton(
+            child: Text(context.strings.buttonShowWelcomeScreen.toUpperCase()),
+            onPressed: () => context.read<SettingsCubit>().setOnboarded(false),
+          ),
+        ],
+      ),
     );
   }
 }
