@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../generated/assets.gen.dart';
 
 class SocialLinkModel {
   const SocialLinkModel({
@@ -9,5 +9,5 @@ class SocialLinkModel {
 
   final String title;
   final Uri address;
-  final Image icon;
+  final AssetGenImage icon;
 }

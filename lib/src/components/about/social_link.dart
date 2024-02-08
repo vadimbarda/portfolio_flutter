@@ -19,7 +19,7 @@ class SocialLink extends StatelessWidget {
           child: SizedBox(
             height: 25,
             width: 25,
-            child: item.icon,
+            child: item.icon.image(),
           ),
         ),
         TextButton(

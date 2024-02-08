@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../generated/assets.gen.dart';
 
 class WorkModel {
   const WorkModel({
@@ -20,7 +20,7 @@ class WorkModel {
   final DateTime startDate;
   final DateTime? endDate;
   final String? description;
-  final ImageProvider? logo;
+  final AssetGenImage? logo;
   final List<Uri>? links;
   final String? type;
   final String? locationType;

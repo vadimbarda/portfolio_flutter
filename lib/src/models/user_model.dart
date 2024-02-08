@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-
+import '../../generated/assets.gen.dart';
 import 'social_link_model.dart';
 
 class UserModel {
@@ -17,7 +16,7 @@ class UserModel {
   final String name;
   final String title;
   final String profile;
-  final ImageProvider avatar;
+  final AssetGenImage avatar;
   final List<SocialLinkModel> socialLinks;
   final List<String> skills;
   final List<String> interests;

@@ -14,7 +14,7 @@ class UserStorage {
     return UserModel(
       name: context.strings.userName,
       title: context.strings.userTitle,
-      avatar: Assets.images.avatar.provider(),
+      avatar: Assets.images.avatar,
       profile: context.strings.userProfile,
       skills: [
         'Dart',
@@ -41,24 +41,24 @@ class UserStorage {
         SocialLinkModel(
           title: 'v.barda@online.ua',
           address: Uri.parse('mailto:v.barda@online.ua'),
-          icon: Assets.logos.email.image(),
+          icon: Assets.logos.email,
         ),
         SocialLinkModel(
           title: 'LinkedIn',
           address:
               Uri.parse('https://www.linkedin.com/in/vadym-barda-26731b5/'),
-          icon: Assets.logos.linkedin.image(),
+          icon: Assets.logos.linkedin,
         ),
         SocialLinkModel(
           title: 'GitHub',
           address: Uri.parse('https://github.com/vadimbarda'),
-          icon: Assets.logos.github.image(),
+          icon: Assets.logos.github,
         ),
         SocialLinkModel(
           title: 'CV',
           address: Uri.parse(
               'https://drive.google.com/file/d/17V5JUdNRwMRZzDcYA_7DlVr4Zl-JS8XN/view?usp=sharing'),
-          icon: Assets.logos.cv.image(),
+          icon: Assets.logos.cv,
         ),
       ],
     );

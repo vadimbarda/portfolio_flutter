@@ -20,7 +20,7 @@ class ExperienceStorage {
         startDate: DateTime.parse('2023-06-01'),
         endDate: DateTime.parse('2024-02-01'),
         description: context.strings.workNextLeagueDescription,
-        logo: Assets.logos.nextLeague.provider(),
+        logo: Assets.logos.nextLeague,
         links: [
           Uri.parse('https://nextleague.com/'),
           Uri.parse(
@@ -36,7 +36,7 @@ class ExperienceStorage {
         locationType: context.strings.workLocationRemote,
         startDate: DateTime.parse('2022-11-01'),
         description: context.strings.workMediaCasaDescription,
-        logo: Assets.logos.mediaCasa.provider(),
+        logo: Assets.logos.mediaCasa,
         links: [
           Uri.parse('https://mediacasa.ai/'),
         ],
@@ -49,7 +49,7 @@ class ExperienceStorage {
         endDate: DateTime.parse('2022-11-30'),
         type: context.strings.workTypeFreelance,
         description: context.strings.workPivbankDescription,
-        logo: Assets.logos.pivbank.provider(),
+        logo: Assets.logos.pivbank,
         links: [
           Uri.parse('https://pivbank.mk.ua/'),
         ],
@@ -63,7 +63,7 @@ class ExperienceStorage {
         type: context.strings.workTypeFullTime,
         locationType: context.strings.workLocationRemote,
         description: context.strings.workInfrontDescription,
-        logo: Assets.logos.infront.provider(),
+        logo: Assets.logos.infront,
         links: [
           Uri.parse('https://www.infront.sport/'),
           Uri.parse('https://www.pgatour.com/'),
@@ -78,7 +78,7 @@ class ExperienceStorage {
         type: context.strings.workTypeFullTime,
         locationType: context.strings.workLocationOnSite,
         description: context.strings.workOmnigonDescription,
-        logo: Assets.logos.omnigon.provider(),
+        logo: Assets.logos.omnigon,
         links: [
           Uri.parse(
               'https://www.linkedin.com/company/omnigon-communications-llc/'),
@@ -125,7 +125,7 @@ class ExperienceStorage {
         endDate: DateTime.parse('2006-06-01'),
         type: context.strings.workTypeEducation,
         description: context.strings.workUniversityDescription,
-        logo: Assets.logos.udmtu.provider(),
+        logo: Assets.logos.udmtu,
       ),
       WorkModel(
         name: context.strings.workCollege,
@@ -135,7 +135,7 @@ class ExperienceStorage {
         endDate: DateTime.parse('2002-06-01'),
         type: context.strings.workTypeEducation,
         description: context.strings.workCollegeDescription,
-        logo: Assets.logos.mpk.provider(),
+        logo: Assets.logos.mpk,
       ),
     ];
   }

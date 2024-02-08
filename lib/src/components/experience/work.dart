@@ -60,7 +60,7 @@ class Work extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(borderRadius),
             image: DecorationImage(
-              image: work.logo ?? Assets.logos.building.provider(),
+              image: work.logo?.provider() ?? Assets.logos.building.provider(),
               fit: BoxFit.cover,
             ),
           ),

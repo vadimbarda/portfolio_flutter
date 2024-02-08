@@ -10,7 +10,7 @@ class AvatarBanner extends StatelessWidget {
     required this.name,
   });
 
-  final ImageProvider avatar;
+  final AssetGenImage avatar;
   final String name;
 
   @override
@@ -35,7 +35,7 @@ class AvatarBanner extends StatelessWidget {
                 height: 120,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: avatar,
+                    image: avatar.provider(),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(borderRadius),
