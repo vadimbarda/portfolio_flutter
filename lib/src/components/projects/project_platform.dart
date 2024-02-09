@@ -6,6 +6,15 @@ enum ProjectPlatform {
   mac,
   windows;
 
+  String get title {
+    return switch (this) {
+      ProjectPlatform.android => 'Android',
+      ProjectPlatform.ios => 'iOS',
+      ProjectPlatform.mac => 'Mac OS',
+      ProjectPlatform.windows => 'Windows',
+    };
+  }
+
   AssetGenImage get logo {
     return switch (this) {
       ProjectPlatform.android => Assets.logos.android,
