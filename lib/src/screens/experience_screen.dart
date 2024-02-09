@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/consts.dart';
-import '../../extensions/context.dart';
-import '../../models/work_model.dart';
-import '../headers/tab_header.dart';
-import 'work.dart';
+import '../../config/consts.dart';
+import '../extensions/context.dart';
+import '../models/work_model.dart';
+import '../components/headers/tab_header.dart';
+import '../components/experience/work.dart';
 
-class ExperienceTab extends StatelessWidget {
-  const ExperienceTab({
+class ExperienceScreen extends StatelessWidget {
+  const ExperienceScreen({
     super.key,
     required this.experience,
   });

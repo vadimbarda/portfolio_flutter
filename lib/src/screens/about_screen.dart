@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/consts.dart';
-import '../../extensions/context.dart';
-import '../../models/user_model.dart';
-import '../headers/tab_header.dart';
-import 'avatar_banner.dart';
-import 'list_section.dart';
-import 'social_link.dart';
+import '../../config/consts.dart';
+import '../extensions/context.dart';
+import '../models/user_model.dart';
+import '../components/headers/tab_header.dart';
+import '../components/about/avatar_banner.dart';
+import '../components/about/list_section.dart';
+import '../components/about/social_link.dart';
 
-class AboutTab extends StatelessWidget {
-  const AboutTab({
+class AboutScreen extends StatelessWidget {
+  const AboutScreen({
     super.key,
     required this.user,
   });

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/consts.dart';
-import '../../extensions/context.dart';
-import '../../models/project_model.dart';
-import '../headers/tab_header.dart';
-import 'project_card.dart';
+import '../../config/consts.dart';
+import '../extensions/context.dart';
+import '../models/project_model.dart';
+import '../components/headers/tab_header.dart';
+import '../components/projects/project_card.dart';
 
-class ProjectsTab extends StatelessWidget {
-  const ProjectsTab({super.key, required this.projects});
+class ProjectsScreen extends StatelessWidget {
+  const ProjectsScreen({super.key, required this.projects});
 
   final List<ProjectModel> projects;
 

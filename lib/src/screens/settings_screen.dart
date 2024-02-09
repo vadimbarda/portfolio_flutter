@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../config/consts.dart';
-import '../../blocks/settings/settings_cubit.dart';
-import '../../extensions/context.dart';
-import '../headers/tab_header.dart';
-import 'language_picker.dart';
-import 'theme_switcher.dart';
+import '../../config/consts.dart';
+import '../blocks/settings/settings_cubit.dart';
+import '../extensions/context.dart';
+import '../components/headers/tab_header.dart';
+import '../components/settings/language_picker.dart';
+import '../components/settings/theme_switcher.dart';
 
-class SettingsTab extends StatelessWidget {
-  const SettingsTab({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

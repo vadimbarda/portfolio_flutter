@@ -4,10 +4,10 @@ import '../../extensions/context.dart';
 import '../../storages/experience_storage.dart';
 import '../../storages/projects_storage.dart';
 import '../../storages/user_storage.dart';
-import '../about/about_tab.dart';
-import '../experience/experience_tab.dart';
-import '../projects/projects_tab.dart';
-import '../settings/settings_tab.dart';
+import '../../screens/about_screen.dart';
+import '../../screens/experience_screen.dart';
+import '../../screens/projects_screen.dart';
+import '../../screens/settings_screen.dart';
 
 enum NavigationTab {
   about,
@@ -35,16 +35,16 @@ enum NavigationTab {
 
   Widget getScreen(BuildContext context) {
     return switch (this) {
-      NavigationTab.about => AboutTab(
+      NavigationTab.about => AboutScreen(
           user: UserStorage(context).data,
         ),
-      NavigationTab.experience => ExperienceTab(
+      NavigationTab.experience => ExperienceScreen(
           experience: ExperienceStorage(context).data,
         ),
-      NavigationTab.projects => ProjectsTab(
+      NavigationTab.projects => ProjectsScreen(
           projects: ProjectsStorage(context).data,
         ),
-      NavigationTab.settings => SettingsTab()
+      NavigationTab.settings => SettingsScreen()
     };
   }
 }
