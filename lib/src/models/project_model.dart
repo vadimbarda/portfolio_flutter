@@ -11,6 +11,7 @@ class ProjectModel {
     required this.tags,
     this.video,
     this.downloadLinks,
+    this.screenshots,
   });
 
   final String name;
@@ -20,4 +21,5 @@ class ProjectModel {
   final List<String> tags;
   final Uri? video;
   final List<SocialLinkModel>? downloadLinks;
+  final List<AssetGenImage>? screenshots;
 }

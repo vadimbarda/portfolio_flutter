@@ -39,7 +39,7 @@ class ProjectsStorage {
       ProjectModel(
         name: 'MediaCasa',
         description: 'description',
-        banner: Assets.images.mediaCasa,
+        banner: Assets.images.mediacasa.banner,
         video: Uri.parse('https://pivbank.mk.ua/media_casa/1.mp4'),
         platforms: [ProjectPlatform.windows, ProjectPlatform.mac],
         tags: [
@@ -75,11 +75,19 @@ class ProjectsStorage {
             icon: Assets.logos.appStore,
           )
         ],
+        screenshots: [
+          Assets.images.mediacasa.screen1,
+          Assets.images.mediacasa.screen2,
+          Assets.images.mediacasa.screen3,
+          Assets.images.mediacasa.screen4,
+          Assets.images.mediacasa.screen5,
+          Assets.images.mediacasa.screen6,
+        ],
       ),
       ProjectModel(
         name: context.strings.workPivbank,
         description: 'description',
-        banner: Assets.images.pivbank,
+        banner: Assets.images.pivbank.banner,
         platforms: [ProjectPlatform.ios, ProjectPlatform.android],
         tags: [
           'CMS Integration',
@@ -89,6 +97,13 @@ class ProjectsStorage {
           'Location Picker',
           'Phone Authentication',
           'Push Notifications',
+        ],
+        screenshots: [
+          Assets.images.pivbank.screen1,
+          Assets.images.pivbank.screen2,
+          Assets.images.pivbank.screen3,
+          Assets.images.pivbank.screen4,
+          Assets.images.pivbank.screen5,
         ],
       ),
     ];

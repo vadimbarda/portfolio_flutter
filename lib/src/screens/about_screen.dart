@@ -6,7 +6,7 @@ import '../models/user_model.dart';
 import '../components/headers/tab_header.dart';
 import '../components/about/avatar_banner.dart';
 import '../components/about/list_section.dart';
-import '../components/about/social_link.dart';
+import '../components/external_link/external_link.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({
@@ -32,7 +32,7 @@ class AboutScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for (var item in user.socialLinks) SocialLink(item: item),
+                for (var item in user.socialLinks) ExternalLink(item: item),
                 Padding(
                   padding: const EdgeInsets.only(
                       bottom: paddingMiddle, top: paddingLarge),

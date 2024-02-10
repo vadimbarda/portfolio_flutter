@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../config/consts.dart';
-import '../components/about/social_link.dart';
+import '../../generated/assets.gen.dart';
+import '../components/external_link/external_link.dart';
+import '../components/gallery/gallery.dart';
 import '../components/projects/project_banner.dart';
 import '../extensions/context.dart';
 import '../models/project_model.dart';
@@ -16,6 +18,7 @@ class ProjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenshots = project.screenshots;
     return Scaffold(
       appBar: AppBar(title: Text(project.name)),
       body: SafeArea(
@@ -45,6 +48,11 @@ class ProjectScreen extends StatelessWidget {
                       padding: EdgeInsets.only(top: paddingLarge),
                       child: buildDesscription(context),
                     ),
+                    if (screenshots != null)
+                      Padding(
+                        padding: EdgeInsets.only(top: paddingLarge),
+                        child: buildGallery(screenshots),
+                      ),
                   ],
                 ),
               ),
@@ -61,10 +69,11 @@ class ProjectScreen extends StatelessWidget {
       children: [
         for (var tag in project.tags)
           Chip(
+            padding: EdgeInsets.zero,
             backgroundColor: context.colors.primary,
             label: Text(
               tag,
-              style: context.textTheme.labelLarge
+              style: context.textTheme.bodyMedium
                   ?.copyWith(color: context.colors.onPrimary),
             ),
           ),
@@ -100,7 +109,14 @@ class ProjectScreen extends StatelessWidget {
         style: context.textTheme.titleMedium,
       ),
       if (links.isEmpty) Text(context.strings.projectNotPublished),
-      for (var link in links) SocialLink(item: link),
+      for (var link in links) ExternalLink(item: link),
     ]);
+  }
+
+  Widget buildGallery(List<AssetGenImage> images) {
+    return Gallery(
+      items: images,
+      title: project.name,
+    );
   }
 }

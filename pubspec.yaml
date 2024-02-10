@@ -18,9 +18,11 @@ dependencies:
     sdk: flutter
   flutter_native_splash: ^2.3.10
   intl: ^0.18.1
+  photo_view: ^0.14.0
   shared_preferences: ^2.2.2
   url_launcher: ^6.2.4
   video_player: ^2.8.2
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   build_runner: ^2.4.8
@@ -33,6 +35,8 @@ flutter:
   assets:
   - assets/audio/
   - assets/images/
+  - assets/images/mediacasa/
+  - assets/images/pivbank/
   - assets/logos/
   fonts:
   - family: Inter
