@@ -20,6 +20,7 @@ class ExperienceScreen extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(right: pagePadding, left: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TabHeader(title: context.strings.tabExperience),
             for (var work in experience) Work(work: work),

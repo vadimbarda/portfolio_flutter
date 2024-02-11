@@ -16,7 +16,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final decorOffset = MediaQuery.of(context).size.width;
+    final decorOffset = MediaQuery.of(context).size.width * 0.75;
     return BlocFactory<AppLoaderCubit, AppLoaderState>(
       create: (context) => AppLoaderCubit(),
       builder: (context, appState) => switch (appState) {

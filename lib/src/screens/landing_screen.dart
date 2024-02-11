@@ -33,7 +33,7 @@ class LandingScreen extends StatelessWidget {
                 opacity: 0.3,
                 child: Assets.images.decor.image(
                   height: screenHeight,
-                  alignment: Alignment.topLeft,
+                  alignment: Alignment.topRight,
                   fit: BoxFit.fitHeight,
                 ),
               ),

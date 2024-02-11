@@ -50,7 +50,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         children: [
           AnimatedBuilder(
             animation: Listenable.merge(
-              [sizeController, rotateController, shiftController],
+              [
+                sizeController,
+                rotateController,
+                shiftController,
+              ],
             ),
             child: OverflowBox(
               maxWidth: screenHeight,
@@ -178,7 +182,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       CurvedAnimation(parent: shiftController, curve: Curves.easeOut),
     );
 
-    opacityAnimation = Tween<double>(begin: 0.5, end: 0.3).animate(
+    opacityAnimation = Tween<double>(begin: 1, end: 0.3).animate(
       CurvedAnimation(parent: shiftController, curve: Curves.linear),
     );
 
