@@ -15,7 +15,7 @@ class TabHeader extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(
         bottom: paddingLarge,
-        top: Platform.isAndroid ? paddingLarge : 0,
+        top: paddingLarge,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
