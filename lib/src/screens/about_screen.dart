@@ -35,7 +35,9 @@ class AboutScreen extends StatelessWidget {
                 for (var item in user.socialLinks) ExternalLink(item: item),
                 Padding(
                   padding: const EdgeInsets.only(
-                      bottom: paddingMiddle, top: paddingLarge),
+                    bottom: paddingMiddle,
+                    top: paddingLarge,
+                  ),
                   child: Text(user.profile),
                 ),
                 Padding(

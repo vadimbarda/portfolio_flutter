@@ -1,5 +1,6 @@
 import '../../generated/assets.gen.dart';
 import '../components/projects/project_platform.dart';
+import 'feature_model.dart';
 import 'social_link_model.dart';
 
 class ProjectModel {
@@ -12,6 +13,8 @@ class ProjectModel {
     this.video,
     this.downloadLinks,
     this.screenshots,
+    this.features,
+    required this.conclusion,
   });
 
   final String name;
@@ -22,4 +25,6 @@ class ProjectModel {
   final Uri? video;
   final List<SocialLinkModel>? downloadLinks;
   final List<AssetGenImage>? screenshots;
+  final List<FeatureModel>? features;
+  final String conclusion;
 }

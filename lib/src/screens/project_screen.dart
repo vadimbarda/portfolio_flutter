@@ -5,6 +5,7 @@ import '../../generated/assets.gen.dart';
 import '../components/external_link/external_link.dart';
 import '../components/gallery/gallery.dart';
 import '../components/projects/project_banner.dart';
+import '../components/projects/project_description.dart';
 import '../extensions/context.dart';
 import '../models/project_model.dart';
 
@@ -97,7 +98,7 @@ class ProjectScreen extends StatelessWidget {
         context.strings.projectDescription,
         style: context.textTheme.titleMedium,
       ),
-      Text(project.description),
+      ProjectDescription(project: project),
     ]);
   }
 
