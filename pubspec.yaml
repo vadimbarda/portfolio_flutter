@@ -57,5 +57,5 @@ flutter_gen:
   output: lib/generated/
 
 flutter_native_splash:
-  background_image: "assets/images/splash.jpg"
+  background_image: "assets/native_splash/splash.jpg"
 

@@ -22,10 +22,11 @@ class AvatarBanner extends StatelessWidget {
           height: 150,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: Assets.images.profileBanner.provider(),
-                fit: BoxFit.cover,
-                alignment: Alignment.topLeft,
-                opacity: 0.8),
+              image: Assets.images.profileBanner.provider(),
+              fit: BoxFit.cover,
+              alignment: Alignment.centerLeft,
+              opacity: 0.8,
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
