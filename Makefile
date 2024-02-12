@@ -1,6 +1,11 @@
 .PHONY: setup
 setup: flutter packages assets strings
 
+.PHONY: resources
+resources:
+	dart run intl_utils:generate
+	dart run build_runner build --delete-conflicting-outputs
+
 .PHONY: flutter
 flutter:
 	fvm install
