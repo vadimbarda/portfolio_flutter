@@ -1,7 +1,7 @@
 name: portfolio_flutter
 description: Portfolio mobile project made by Vadym Barda.
 
-version: 1.0.0+2
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
