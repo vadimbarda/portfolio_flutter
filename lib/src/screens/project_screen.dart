@@ -52,7 +52,7 @@ class ProjectScreen extends StatelessWidget {
                     if (screenshots != null)
                       Padding(
                         padding: EdgeInsets.only(top: paddingLarge),
-                        child: buildGallery(screenshots),
+                        child: buildGallery(context, screenshots),
                       ),
                   ],
                 ),
@@ -83,41 +83,59 @@ class ProjectScreen extends StatelessWidget {
   }
 
   Widget buildPlatformsInfo(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(
-        context.strings.projectPlatforms,
-        style: context.textTheme.titleMedium,
-      ),
-      Text(project.platforms.map((platform) => platform.title).join(', ')),
-    ]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.strings.projectPlatforms,
+          style: context.textTheme.titleMedium,
+        ),
+        Text(project.platforms.map((platform) => platform.title).join(', ')),
+      ],
+    );
   }
 
   Widget buildDesscription(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(
-        context.strings.projectDescription,
-        style: context.textTheme.titleMedium,
-      ),
-      ProjectDescription(project: project),
-    ]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.strings.projectDescription,
+          style: context.textTheme.titleMedium,
+        ),
+        ProjectDescription(project: project),
+      ],
+    );
   }
 
   Widget buildDownloads(BuildContext context) {
     final links = project.downloadLinks ?? [];
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(
-        context.strings.projectStorages,
-        style: context.textTheme.titleMedium,
-      ),
-      if (links.isEmpty) Text(context.strings.projectNotPublished),
-      for (var link in links) ExternalLink(item: link),
-    ]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.strings.projectStorages,
+          style: context.textTheme.titleMedium,
+        ),
+        if (links.isEmpty) Text(context.strings.projectNotPublished),
+        for (var link in links) ExternalLink(item: link),
+      ],
+    );
   }
 
-  Widget buildGallery(List<AssetGenImage> images) {
-    return Gallery(
-      items: images,
-      title: project.name,
+  Widget buildGallery(BuildContext context, List<AssetGenImage> images) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          context.strings.projectScreenshots,
+          style: context.textTheme.titleMedium,
+        ),
+        Gallery(
+          items: images,
+          title: project.name,
+        ),
+      ],
     );
   }
 }
