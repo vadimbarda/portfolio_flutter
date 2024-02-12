@@ -14,6 +14,7 @@ class SettingsState extends Equatable {
     required this.locale,
     required this.mode,
     required this.onboarded,
+    this.version,
   });
 
   factory SettingsState.fromJson(Map<String, dynamic> jsonMap) {
@@ -31,16 +32,19 @@ class SettingsState extends Equatable {
     Locale? locale,
     ThemeMode? mode,
     bool? onboarded,
+    String? version,
   }) =>
       SettingsState(
         locale: locale ?? state.locale,
         mode: mode ?? state.mode,
         onboarded: onboarded ?? state.onboarded,
+        version: version ?? state.version,
       );
 
   final Locale locale;
   final ThemeMode mode;
   final bool onboarded;
+  final String? version;
 
   String toString() {
     final map = <String, dynamic>{};

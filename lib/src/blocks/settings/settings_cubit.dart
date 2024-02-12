@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../config/preference.dart';
@@ -11,11 +12,17 @@ class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit(Map<String, dynamic> jsonMap)
       : super(SettingsState.fromJson(jsonMap)) {
     Intl.defaultLocale = state.locale.languageCode;
+    _setAppVersion();
   }
 
   void _save() async {
     final SharedPreferences preferences = await SharedPreferences.getInstance();
     preferences.setString(Preference.settings.key, state.toString());
+  }
+
+  void _setAppVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    emit(SettingsState.fromState(state, version: packageInfo.version));
   }
 
   void setLocale(Locale locale) {

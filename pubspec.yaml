@@ -18,6 +18,7 @@ dependencies:
     sdk: flutter
   flutter_native_splash: ^2.3.10
   intl: ^0.18.1
+  package_info_plus: ^3.1.2
   photo_view: ^0.14.0
   shared_preferences: ^2.2.2
   url_launcher: ^6.2.4
@@ -57,5 +58,10 @@ flutter_gen:
   output: lib/generated/
 
 flutter_native_splash:
-  background_image: "assets/native_splash/splash.jpg"
+  background_image: "assets/native_splash/splash.png"
+  android_12:
+    image: assets/native_splash/logo.png
+    branding: assets/native_splash/brand.png
+    color: "#FFFFFF"
+    icon_background_color: "#FFFFFF"
 

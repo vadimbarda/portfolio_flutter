@@ -13,11 +13,29 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final version = context.read<SettingsCubit>().state.version;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: pagePadding),
       child: Column(
         children: [
           TabHeader(title: context.strings.tabSettings),
+          if (version != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: paddingSmall),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    context.strings.version,
+                    style: context.textTheme.bodyLarge,
+                  ),
+                  Text(
+                    version,
+                    style: context.textTheme.bodyLarge,
+                  ),
+                ],
+              ),
+            ),
           Padding(
             padding: const EdgeInsets.only(bottom: paddingSmall),
             child: Row(
