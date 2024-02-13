@@ -111,19 +111,23 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     style: context.textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                   ),
-                  Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        fit: FlexFit.loose,
-                        child: FilledButton(
-                          onPressed: () => sizeController.forward(),
-                          child: Text(context.strings.buttonNext.toUpperCase()),
+                  Padding(
+                    padding: const EdgeInsets.only(top: paddingLarge),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          fit: FlexFit.loose,
+                          child: FilledButton(
+                            onPressed: () => sizeController.forward(),
+                            child:
+                                Text(context.strings.buttonNext.toUpperCase()),
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
+                  Spacer(),
                 ],
               ),
             ),
@@ -164,7 +168,11 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             (status) {
               if (status == AnimationStatus.completed) {
                 sizeController.reverse();
-                playIntroSound();
+                try {
+                  playIntroSound();
+                } catch (error) {
+                  print(error);
+                }
               }
             },
           );
