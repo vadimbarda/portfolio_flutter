@@ -1,0 +1,67 @@
+name: portfolio_flutter
+description: Portfolio mobile project made by Vadym Barda.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  audioplayers: ^5.2.1
+  collection: ^1.18.0
+  equatable: ^2.0.5
+  flick_video_player: ^0.7.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  flutter_localizations:
+    sdk: flutter
+  flutter_native_splash: ^2.3.10
+  intl: ^0.18.1
+  package_info_plus: ^3.1.2
+  photo_view: ^0.14.0
+  shared_preferences: ^2.2.2
+  url_launcher: ^6.2.4
+  video_player: ^2.8.2
+  visibility_detector: ^0.4.0+2
+
+dev_dependencies:
+  build_runner: ^2.4.8
+  flutter_gen_runner: ^5.4.0
+  flutter_lints: ^3.0.0
+  intl_utils: ^2.8.7
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/audio/
+  - assets/images/
+  - assets/images/mediacasa/
+  - assets/images/pivbank/
+  - assets/logos/
+  fonts:
+  - family: Inter
+    fonts:
+    - asset: assets/fonts/Inter-Regular.ttf
+    - asset: assets/fonts/Inter-Medium.ttf
+      weight: 500
+  - family: PTSans
+    fonts:
+    - asset: assets/fonts/PTSans-Regular.ttf
+
+flutter_intl:
+  enabled: true
+  class_name: Strings
+  arb_dir: l10n
+
+flutter_gen:
+  output: lib/generated/
+
+flutter_native_splash:
+  background_image: "assets/native_splash/splash.png"
+  android_12:
+    image: assets/native_splash/logo.png
+    branding: assets/native_splash/brand.png
+    color: "#FFFFFF"
+    icon_background_color: "#FFFFFF"
+
